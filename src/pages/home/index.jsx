@@ -1,4 +1,4 @@
-import { Container, useTheme, Box, Grid } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import Hero from "../../components/hero/Hero";
 import { theme } from "../../theme";
 import { default as airtable } from "../../assets/airtable.svg";
@@ -14,33 +14,34 @@ const Home = () => {
   return (
     <div className="home">
       <Hero />
+      {/* CLIENTS */}
       <Box
         width="100%"
         sx={{
           backgroundColor: palette.secondary.main,
-          p: "2rem 0vw",
+          p: "3rem",
         }}
       >
-        <Grid container>
-          <Grid item lg={2} md={4} spacing={4}>
+        <ul className="clients">
+          <li>
             <img src={airtable}></img>
-          </Grid>
-          <Grid item lg={2} md={4}>
+          </li>
+          <li>
             <img src={sketch}></img>
-          </Grid>
-          <Grid item lg={2} md={4}>
+          </li>
+          <li>
             <img src={dribbble}></img>
-          </Grid>
-          <Grid item lg={2} md={4}>
+          </li>
+          <li>
             <img src={slack}></img>
-          </Grid>
-          <Grid item lg={2} md={4}>
+          </li>
+          <li>
             <img src={livechat}></img>
-          </Grid>
-          <Grid item lg={2} md={4}>
+          </li>
+          <li>
             <img src={gitlab}></img>
-          </Grid>
-        </Grid>
+          </li>
+        </ul>
       </Box>
     </div>
   );
