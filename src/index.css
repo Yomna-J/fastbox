@@ -30,7 +30,7 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   text-align: center;
 }
 .tools li {
