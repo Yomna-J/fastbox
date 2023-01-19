@@ -99,6 +99,7 @@ const Hero = () => {
                 sx={{
                   "&:hover": {
                     backgroundColor: palette.primary.main,
+                    color: "#fff",
                   },
                   ml: { md: "-6px" },
                   p: "0 50px",

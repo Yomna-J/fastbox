@@ -1,4 +1,11 @@
-import { Box, Typography, useTheme, Container, Grid } from "@mui/material";
+import {
+  Button,
+  Box,
+  Typography,
+  useTheme,
+  Container,
+  Grid,
+} from "@mui/material";
 import Hero from "../../components/hero/Hero";
 import { theme } from "../../theme";
 import { default as airtable } from "../../assets/airtable.svg";
@@ -12,6 +19,7 @@ import { default as booking } from "../../assets/booking.svg";
 import { default as packing } from "../../assets/packing.svg";
 import { default as transportation } from "../../assets/transportation.svg";
 import { default as delivery } from "../../assets/delivery.svg";
+import { default as truck } from "../../assets/truck.svg";
 import Step from "../../components/step";
 
 const Home = () => {
@@ -79,81 +87,153 @@ const Home = () => {
         </ul>
       </Box>
       {/* HOW IT WORKS */}
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: { md: "flex-end", xs: "center" },
-          flexDirection: { xs: "column", md: "row" },
-          justifyContent: { md: "space-between", xs: "center" },
-          p: "15vh 15% 2rem 15%",
-        }}
-      >
+      <div className="how-work">
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: { md: "flex-end", xs: "center" },
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: { md: "space-between", xs: "center" },
+            p: "15vh 15% 2rem 15%",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              gap: { md: "4rem", xs: "0" },
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              variant="head"
+              sx={{
+                color: palette.primary.dark,
+                fontWeight: "bold",
+                fontSize: { md: "2.0rem", xs: "1.25rem" },
+              }}
+            >
+              How Fast box works
+            </Typography>
+            <Typography
+              variant="text"
+              sx={{
+                width: { md: "40%", xs: "100%" },
+                color: palette.text.secondary,
+                fontSize: { md: "1.25rem" },
+                textAlign: { md: "left", xs: "center" },
+              }}
+            >
+              Duis aute irure dolor in reprehenderit in voluptate cillum dolore
+              eu fugiat nulla pariatur.
+            </Typography>
+          </Box>
+          <img src={star} alt="star" sx={{ alignSelf: "flex-end" }} />
+        </Box>
+        <Box
+          sx={{
+            p: "10vh 10% 2rem 10%",
+          }}
+        >
+          <Grid
+            container
+            columns={{ xs: 1, md: 4 }}
+            sx={{
+              "&>:nth-child(-n+3)": {
+                borderRight: { md: "1px dashed #9757d738" },
+                borderBottom: { xs: "1px dashed #9757d738", md: "none" },
+              },
+            }}
+          >
+            {data.steps.map((step) => {
+              return (
+                <Grid className="steps-grid" item xs={1} key={step.id}>
+                  <Step
+                    className="step"
+                    key={step.id}
+                    id={step.id}
+                    img={step.img}
+                    name={step.name}
+                    description={step.description}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
+        </Box>
         <Box
           sx={{
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            gap: { md: "4rem", xs: "0" },
             justifyContent: "center",
+            gap: "5rem",
             alignItems: "center",
+            pr: { md: "10vw" },
           }}
         >
-          <Typography
-            variant="head"
+          <Box
+            component="img"
             sx={{
-              color: palette.primary.dark,
-              fontWeight: "bold",
-              fontSize: { md: "2.0rem", xs: "1.25rem" },
+              width: { xs: "100%", md: "50%" },
             }}
-          >
-            How Fast box works
-          </Typography>
-          <Typography
-            variant="text"
-            sx={{
-              width: { md: "40%", xs: "100%" },
-              color: palette.text.secondary,
-              fontSize: { md: "1.25rem" },
-              textAlign: { md: "left", xs: "center" },
-            }}
-          >
-            Duis aute irure dolor in reprehenderit in voluptate cillum dolore eu
-            fugiat nulla pariatur.
-          </Typography>
-        </Box>
-        <img src={star} alt="star" sx={{ alignSelf: "flex-end" }} />
-      </Box>
+            src={truck}
+            alt="truck"
+          />
 
-      <Box
-        sx={{
-          p: "10vh 10% 2rem 10%",
-        }}
-      >
-        <Grid
-          container
-          columns={{ xs: 1, md: 4 }}
-          sx={{
-            "&>:nth-child(-n+3)": {
-              borderRight: { md: "1px dashed #9757d738" },
-              borderBottom: { xs: "1px dashed #9757d738", md: "none" },
-            },
-          }}
-        >
-          {data.steps.map((step) => {
-            return (
-              <Grid className="steps-grid" item xs={1} key={step.id}>
-                <Step
-                  className="step"
-                  key={step.id}
-                  id={step.id}
-                  img={step.img}
-                  name={step.name}
-                  description={step.description}
-                />
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: { xs: "center", md: "flex-start" },
+              gap: "1.5rem",
+              p: { xs: "2rem" },
+            }}
+          >
+            <Typography
+              variant="head"
+              sx={{
+                color: palette.primary.dark,
+                fontWeight: "bold",
+                fontSize: { md: "2.0rem", xs: "1.25rem" },
+              }}
+            >
+              We Have the largest Network
+            </Typography>
+            <Typography
+              variant="text"
+              sx={{
+                pt: "1rem",
+                color: palette.text.secondary,
+                fontSize: { md: "1.25rem" },
+                textAlign: { md: "left", xs: "center" },
+              }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Typography>
+            <Button
+              variant="text"
+              sx={{
+                width: "10rem",
+                p: ".5rem 1.5rem",
+                backgroundColor: palette.primary.main,
+                color: "#ffffff",
+                borderRadius: 2,
+                boxShadow: ` 0px 7px 5px 0px ${palette.primary.light}}`,
+                "&:hover": { color: palette.primary.main },
+              }}
+            >
+              Learn More
+            </Button>
+          </Box>
+        </Box>
+      </div>
     </div>
   );
 };
