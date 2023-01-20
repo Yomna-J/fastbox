@@ -1,11 +1,4 @@
-import {
-  Button,
-  Box,
-  Typography,
-  useTheme,
-  Container,
-  Grid,
-} from "@mui/material";
+import { Button, Box, Typography, useTheme, Grid } from "@mui/material";
 import Hero from "../../components/hero/Hero";
 import { theme } from "../../theme";
 import { default as airtable } from "../../assets/airtable.svg";
@@ -21,6 +14,7 @@ import { default as transportation } from "../../assets/transportation.svg";
 import { default as delivery } from "../../assets/delivery.svg";
 import { default as truck } from "../../assets/truck.svg";
 import Step from "../../components/step";
+import Card from "../../components/ui/Card";
 
 const Home = () => {
   const { palette } = useTheme(theme);
@@ -61,6 +55,26 @@ const Home = () => {
         description:
           "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         img: delivery,
+      },
+    ],
+    specialties: [
+      {
+        id: "01",
+        title: "Easy to order",
+        description:
+          "Stacks is a production-ready library of stackable content blocks built in React Native",
+      },
+      {
+        id: "02",
+        title: "Cash on delivery",
+        description:
+          "Stacks is a production-ready library of stackable content blocks built in React Native",
+      },
+      {
+        id: "03",
+        title: "Live tracking",
+        description:
+          "Stacks is a production-ready library of stackable content blocks built in React Native",
       },
     ],
   };
@@ -234,6 +248,60 @@ const Home = () => {
           </Box>
         </Box>
       </div>
+      <Box
+        sx={{
+          display: "flex",
+          p: "2.5rem",
+          flexDirection: { xs: "column", md: "row" },
+          gap: { md: "4rem", xs: "0" },
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography
+          variant="head"
+          sx={{
+            color: palette.primary.dark,
+            fontWeight: "bold",
+            fontSize: { md: "2.0rem", xs: "1.25rem" },
+          }}
+        >
+          Our Specialties
+        </Typography>
+        <Typography
+          variant="text"
+          sx={{
+            width: { md: "30%", xs: "100%" },
+            color: palette.text.secondary,
+            fontSize: { md: "1.25rem" },
+            textAlign: { md: "left", xs: "center" },
+          }}
+        >
+          Duis aute irure dolor in reprehenderit in voluptate cillum dolore eu
+          fugiat nulla pariatur.
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          p: "2.5rem",
+          flexDirection: { xs: "column", md: "row" },
+          gap: "5rem",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {data.specialties.map((specialty) => {
+          return (
+            <Card
+              key={specialty.id}
+              number={specialty.id}
+              title={specialty.title}
+              description={specialty.description}
+            />
+          );
+        })}
+      </Box>
     </div>
   );
 };
