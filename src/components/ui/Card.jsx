@@ -10,6 +10,7 @@ import { theme } from "../../theme";
 const Card = ({ number, title, description }) => {
   const { palette } = useTheme(theme);
 
+  // TODO: Fix card padding
   return (
     <Box
       sx={{

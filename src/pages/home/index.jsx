@@ -16,6 +16,7 @@ import { default as truck } from "../../assets/truck.svg";
 import Step from "../../components/step";
 import Card from "../../components/ui/Card";
 import PriceForm from "../../components/ui/PriceForm";
+import Reviews from "../../components/ui/Reviews";
 
 const Home = () => {
   const { palette } = useTheme(theme);
@@ -76,6 +77,24 @@ const Home = () => {
         title: "Live tracking",
         description:
           "Stacks is a production-ready library of stackable content blocks built in React Native",
+      },
+    ],
+    reviews: [
+      {
+        id: 0,
+        picture: "",
+        author: "dsafas",
+        job: "dasf",
+        content: "dsafajhdalkjhdasjfkhafeiaf fhdfalkfjh afajhflkjafsf",
+        rate: 5,
+      },
+      {
+        id: 1,
+        picture: "",
+        author: "eqrvzvv",
+        job: "eeawra",
+        content: "oooadsafjk dajhfkaf jakkdspsad",
+        rate: 2,
       },
     ],
   };
@@ -285,6 +304,7 @@ const Home = () => {
       <Box
         sx={{
           display: "flex",
+          m: "0 7%",
           p: "2.5rem",
           flexDirection: { xs: "column", md: "row" },
           gap: "5rem",
@@ -341,11 +361,15 @@ const Home = () => {
             Duis aute irure dolor in reprehenderit in voluptate cillum dolore eu
             fugiat nulla pariatur.
           </Typography>
+          {/* TODO: Add image */}
         </Box>
         {/* PRICE FORM  */}
 
         <PriceForm />
       </Box>
+      {/* TODO: Missing Section */}
+      {/* REVIEWS */}
+      <Reviews reviews={data.reviews} />
     </div>
   );
 };

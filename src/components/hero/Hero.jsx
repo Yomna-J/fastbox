@@ -7,6 +7,8 @@ import {
   Button,
 } from "@mui/material";
 
+
+// TODO: Update background image
 const Hero = () => {
   const { palette } = useTheme();
   return (

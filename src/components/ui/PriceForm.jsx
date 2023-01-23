@@ -14,7 +14,7 @@ import { theme } from "../../theme.js";
 import { useState } from "react";
 
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-
+// TODO: Responsive design
 const PriceForm = () => {
   const { palette } = useTheme(theme);
   const [date, setDate] = useState(new Date());
@@ -25,6 +25,8 @@ const PriceForm = () => {
     from: "",
     to: "",
   });
+
+  //TODO: Check bookingDate
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,6 +52,7 @@ const PriceForm = () => {
         flexDirection: "column",
       }}
     >
+      {/* TODO: Add labels */}
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DatePicker
           label="Enter Booking date"
@@ -84,43 +87,6 @@ const PriceForm = () => {
           )}
         />
       </LocalizationProvider>
-      {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker
-          id="booking-date"
-          name="bookingDate"
-          label="Basic example"
-          value={bookingDate}
-          onChange={handleChange}
-          views={["year", "month", "day"]}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              variant="standard"
-              sx={{
-                input: {
-                  color: palette.text.secondary,
-                },
-              }}
-            />
-          )}
-        />
-      </LocalizationProvider> */}
-
-      {/* <TextField
-        id="booking-date"
-        name="bookingDate"
-        label="Basic example"
-        variant="standard"
-        type="date"
-        value={bookingDate}
-        onChange={handleChange}
-        FormHelperTextProps={{ style: { fontWeight: "bold" } }}
-        sx={{
-          input: {
-            color: palette.text.secondary,
-          },
-        }}
-      /> */}
       <FormControl>
         <Select
           variant="standard"
@@ -186,6 +152,7 @@ const PriceForm = () => {
           >
             <MenuItem value="">From</MenuItem>
           </Select>
+          {/* TODO: Add submit button */}
         </FormControl>
       </Box>
     </Box>

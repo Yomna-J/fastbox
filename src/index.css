@@ -53,3 +53,12 @@
   filter: invert(65%) sepia(19%) saturate(1301%) hue-rotate(111deg)
     brightness(95%) contrast(83%);
 }
+/* TABS */
+.active-tab {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(246, 253, 247, 0.2281863428965336) 23%,
+    rgba(227, 249, 231, 1) 100%
+  ) !important;
+}
