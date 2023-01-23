@@ -4,6 +4,7 @@
 .html {
   overflow: hidden;
 }
+/* HERO */
 .hero {
   background-image: url("./assets/background.svg");
   background-size: cover;
@@ -28,6 +29,7 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+/* TOOLS USED */
 .tools {
   margin: 0;
   padding: 0;
@@ -39,10 +41,15 @@
 .tools li {
   padding: 1rem;
 }
-
+/* HOW IT WORKS */
 .how-work {
   background-image: url("./assets/color.svg");
   width: 100%;
   background-repeat: no-repeat;
   background-position: right;
+}
+/* FORM STYLE */
+::-webkit-calendar-picker-indicator {
+  filter: invert(65%) sepia(19%) saturate(1301%) hue-rotate(111deg)
+    brightness(95%) contrast(83%);
 }

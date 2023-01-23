@@ -15,6 +15,7 @@ import { default as delivery } from "../../assets/delivery.svg";
 import { default as truck } from "../../assets/truck.svg";
 import Step from "../../components/step";
 import Card from "../../components/ui/Card";
+import PriceForm from "../../components/ui/PriceForm";
 
 const Home = () => {
   const { palette } = useTheme(theme);
@@ -301,6 +302,49 @@ const Home = () => {
             />
           );
         })}
+      </Box>
+      <Box
+        sx={{
+          backgroundColor: palette.secondary.main,
+          p: "3rem 3rem 0 3rem",
+          m: "2rem 10%",
+          borderRadius: "1.25rem",
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          gap: "5rem",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Typography
+            variant="head"
+            sx={{
+              color: palette.primary.dark,
+              fontWeight: "bold",
+              fontSize: { md: "2.0rem", xs: "1.25rem" },
+            }}
+          >
+            Calculate your price
+          </Typography>
+          <Typography
+            variant="text"
+            sx={{
+              color: palette.text.secondary,
+              fontSize: { md: "1.25rem" },
+              textAlign: { md: "left", xs: "center" },
+            }}
+          >
+            Duis aute irure dolor in reprehenderit in voluptate cillum dolore eu
+            fugiat nulla pariatur.
+          </Typography>
+        </Box>
+        {/* PRICE FORM  */}
+
+        <PriceForm />
       </Box>
     </div>
   );
