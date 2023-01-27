@@ -5,22 +5,25 @@ import {
   MenuItem,
   Select,
   FormControl,
+  Typography,
 } from "@mui/material";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-
+import { default as calender } from "../../assets/calender.svg";
+import { default as location } from "../../assets/location.svg";
+import { default as parcel } from "../../assets/parcel.svg";
 import { theme } from "../../theme.js";
 import { useState } from "react";
 
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import PrimaryButton from "./PrimaryButton";
 // TODO: Responsive design
 const PriceForm = () => {
   const { palette } = useTheme(theme);
-  const [date, setDate] = useState(new Date());
+  const [bookingDate, setBookingDate] = useState(new Date());
 
   const [searchValues, setSearchValues] = useState({
-    bookingDate: "",
     parcelType: "",
     from: "",
     to: "",
@@ -37,29 +40,43 @@ const PriceForm = () => {
     e.preventDefault();
   };
 
-  const { bookingDate, parcelType, from, to } = searchValues;
+  const { parcelType, from, to } = searchValues;
 
   return (
-    <Box
-      component="form"
-      sx={{
-        p: "4rem",
-        mb: "3rem",
-        width: "50%",
-        backgroundColor: "#fff",
-        borderRadius: "1.25rem",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <>
       {/* TODO: Add labels */}
+      {/* BOOKING DATE */}
+      <Box display="flex" gap="1rem" alignItems="center">
+        <Box
+          component="img"
+          sx={{
+            backgroundColor: palette.primary.main,
+            width: "2rem",
+            p: ".25rem",
+            borderRadius: ".15rem",
+          }}
+          src={calender}
+          alt="calender"
+        />
+        <Typography
+          variant="head"
+          sx={{
+            color: palette.text.primary,
+            fontWeight: "bold",
+            fontSize: { md: "1.25rem", xs: "1.25rem" },
+          }}
+        >
+          Booking Date
+        </Typography>
+      </Box>
+
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DatePicker
+          className="data-field"
           label="Enter Booking date"
           name="bookingDate"
-          value={date}
-          onChange={(value) => setDate(value)}
-          sx={{}}
+          value={bookingDate}
+          onChange={(value) => setBookingDate(value)}
           renderInput={(params) => (
             <TextField
               // InputLabelProps={{ shrink: false }}
@@ -78,6 +95,7 @@ const PriceForm = () => {
                 },
                 "& .MuiFormLabel-root": {
                   color: palette.text.secondary,
+                  fontWeight: "500",
                 },
                 input: {
                   color: palette.text.secondary,
@@ -87,7 +105,31 @@ const PriceForm = () => {
           )}
         />
       </LocalizationProvider>
-      <FormControl>
+      {/* TYPE OF PARCEL */}
+      <Box display="flex" gap="1rem" alignItems="center">
+        <Box
+          component="img"
+          sx={{
+            backgroundColor: palette.primary.main,
+            width: "2rem",
+            p: ".25rem",
+            borderRadius: ".15rem",
+          }}
+          src={parcel}
+          alt="parcel"
+        />
+        <Typography
+          variant="head"
+          sx={{
+            color: palette.text.primary,
+            fontWeight: "bold",
+            fontSize: { md: "1.25rem", xs: "1.25rem" },
+          }}
+        >
+          Type of Parcel
+        </Typography>
+      </Box>
+      <FormControl className="data-field">
         <Select
           variant="standard"
           value={parcelType}
@@ -102,15 +144,40 @@ const PriceForm = () => {
             },
             " & ": {
               color: palette.text.secondary,
+              fontWeight: "500",
             },
           }}
         >
           <MenuItem value="">Select Parcel Type</MenuItem>
         </Select>
       </FormControl>
-      <Box display="flex" gap="2rem">
+      <Box display="flex" gap="1rem" alignItems="center">
+        <Box
+          component="img"
+          sx={{
+            backgroundColor: palette.primary.main,
+            width: "2rem",
+            p: ".25rem",
+            borderRadius: ".15rem",
+          }}
+          src={location}
+          alt="location"
+        />
+        <Typography
+          variant="head"
+          sx={{
+            color: palette.text.primary,
+            fontWeight: "bold",
+            fontSize: { md: "1.25rem", xs: "1.25rem" },
+          }}
+        >
+          Destination
+        </Typography>
+      </Box>
+      {/* DESTINATION */}
+      <Box display="flex" flexWrap="wrap" gap="1rem">
         {/* TO FIELD */}
-        <FormControl>
+        <FormControl className="data-field">
           <Select
             variant="standard"
             value={to}
@@ -125,6 +192,7 @@ const PriceForm = () => {
               },
               " & ": {
                 color: palette.text.secondary,
+                fontWeight: "500",
               },
             }}
           >
@@ -132,7 +200,7 @@ const PriceForm = () => {
           </Select>
         </FormControl>
         {/* FROM FIELD */}
-        <FormControl>
+        <FormControl className="data-field">
           <Select
             variant="standard"
             value={from}
@@ -147,6 +215,7 @@ const PriceForm = () => {
               },
               " & ": {
                 color: palette.text.secondary,
+                fontWeight: "500",
               },
             }}
           >
@@ -155,7 +224,8 @@ const PriceForm = () => {
           {/* TODO: Add submit button */}
         </FormControl>
       </Box>
-    </Box>
+      <PrimaryButton title="Calculate" />
+    </>
   );
 };
 

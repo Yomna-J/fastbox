@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Box } from "@mui/system";
 import { useState, useEffect } from "react";
 import { Menu, Close } from "@mui/icons-material";
+import PrimaryButton from "../ui/PrimaryButton";
 
 const Navbar = () => {
   const { palette } = useTheme();
@@ -192,19 +193,7 @@ const Navbar = () => {
                 >
                   Signin
                 </Button>
-                <Button
-                  variant="text"
-                  sx={{
-                    p: ".5rem 1.5rem",
-                    backgroundColor: palette.primary.main,
-                    color: "#ffffff",
-                    borderRadius: 2,
-                    boxShadow: ` 0px 7px 5px 0px ${palette.primary.light}}`,
-                    "&:hover": { color: palette.primary.main },
-                  }}
-                >
-                  Register
-                </Button>
+                <PrimaryButton title="Register" />
               </Box>
             </Box>
           )}

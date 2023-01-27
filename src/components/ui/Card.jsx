@@ -10,7 +10,6 @@ import { theme } from "../../theme";
 const Card = ({ number, title, description }) => {
   const { palette } = useTheme(theme);
 
-  // TODO: Fix card padding
   return (
     <Box
       sx={{
@@ -19,7 +18,7 @@ const Card = ({ number, title, description }) => {
         alignItems: { xs: "center", md: "flex-start" },
         width: { md: "500px ", xs: "100%" },
         gap: "1.5rem",
-        p: "4rem 3rem ",
+        p: "4rem 2rem ",
         borderRadius: ".80rem",
         boxShadow: ` 0px 0px 15px -3px ${palette.secondary.light}}`,
       }}

@@ -9,7 +9,7 @@
     "@mui/lab": "^5.0.0-alpha.116",
     "@mui/material": "^5.11.3",
     "@mui/material-next": "^6.0.0-alpha.69",
-    "@mui/x-date-pickers": "^5.0.15",
+    "@mui/x-date-pickers": "^5.0.16",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
