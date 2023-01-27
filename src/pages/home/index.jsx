@@ -1,17 +1,14 @@
-import { Button, Box, Typography, useTheme, Grid } from "@mui/material";
+import {
+  Button,
+  Box,
+  Typography,
+  useTheme,
+  Grid,
+  useMediaQuery,
+} from "@mui/material";
 import Hero from "../../components/hero/Hero";
 import { theme } from "../../theme";
-import { default as airtable } from "../../assets/airtable.svg";
-import { default as sketch } from "../../assets/sketch.svg";
-import { default as dribbble } from "../../assets/dirbbble.svg";
-import { default as slack } from "../../assets/slack.svg";
-import { default as livechat } from "../../assets/livechat.svg";
-import { default as gitlab } from "../../assets/gitlab.svg";
 import { default as star } from "../../assets/star.svg";
-import { default as booking } from "../../assets/booking.svg";
-import { default as packing } from "../../assets/packing.svg";
-import { default as transportation } from "../../assets/transportation.svg";
-import { default as delivery } from "../../assets/delivery.svg";
 import { default as truck } from "../../assets/truck.svg";
 import { default as price } from "../../assets/price.svg";
 import { default as gps } from "../../assets/gps.svg";
@@ -20,93 +17,17 @@ import Card from "../../components/ui/Card";
 import PriceForm from "../../components/ui/PriceForm";
 import Reviews from "../../components/ui/Reviews";
 import PrimaryButton from "../../components/ui/PrimaryButton";
+import data from "../../data";
+import MobileReviews from "../../components/ui/MobileReviews";
 
 const Home = () => {
   const { palette } = useTheme(theme);
-  const data = {
-    tools: [
-      { id: 1, name: "airtable", img: airtable },
-      { id: 2, name: "sketch", img: sketch },
-      { id: 3, name: "dribbble", img: dribbble },
-      { id: 4, name: "slack", img: slack },
-      { id: 5, name: "livechat", img: livechat },
-      { id: 6, name: "gitlab", img: gitlab },
-    ],
-    steps: [
-      {
-        id: 1,
-        name: "Booking",
-        description:
-          "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-        img: booking,
-      },
-      {
-        id: 2,
-        name: "Packing",
-        description:
-          "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-        img: packing,
-      },
-      {
-        id: 3,
-        name: "Transportation",
-        description:
-          "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-        img: transportation,
-      },
-      {
-        id: 4,
-        name: "Delivery",
-        description:
-          "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-        img: delivery,
-      },
-    ],
-    specialties: [
-      {
-        id: "01",
-        title: "Easy to order",
-        description:
-          "Stacks is a production-ready library of stackable content blocks built in React Native",
-      },
-      {
-        id: "02",
-        title: "Cash on delivery",
-        description:
-          "Stacks is a production-ready library of stackable content blocks built in React Native",
-      },
-      {
-        id: "03",
-        title: "Live tracking",
-        description:
-          "Stacks is a production-ready library of stackable content blocks built in React Native",
-      },
-    ],
-    reviews: [
-      {
-        id: 0,
-        avatar: "",
-        author: "dsafas",
-        job: "dasf",
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur finibus risus consectetur pharetra. Sed scelerisque, nisi ut vestibulum convallis, nibh arcu iaculis tellus, vel molestie risus nisl ut purus. Sed at erat nec sem pretium porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse eu neque ex. Integer rhoncus enim a magna scelerisque, sed euismod lacus imperdiet. Phasellus ac diam eget sem tincidunt fermentum. Duis at nunc quis leo mollis tincidunt at ut turpis.",
-        rate: 5,
-      },
-      {
-        id: 1,
-        avatar: "",
-        author: "eqrvzvv",
-        job: "eeawra",
-        content: "oooadsafjk dajhfkaf jakkdspsad",
-        rate: 2,
-      },
-    ],
-  };
+  const isMobile = useMediaQuery("(max-width:900px)");
 
   return (
     <div className="home">
       <Hero />
-      {/* tools */}
+      {/* TOOLS */}
       <Box
         width="100%"
         max-width="10w"
@@ -200,7 +121,7 @@ const Home = () => {
               );
             })}
           </Grid>
-        </Box>{" "}
+        </Box>
         {/* NETWORK */}
         <Box
           sx={{
@@ -417,7 +338,7 @@ const Home = () => {
               fontSize: { md: "2.0rem", xs: "1.25rem" },
             }}
           >
-            Follow your shipment via GPS{" "}
+            Follow your shipment via GPS
           </Typography>
           <Typography
             variant="text"
@@ -459,8 +380,44 @@ const Home = () => {
           alt="gps"
         />
       </Box>
-      {/* REVIEWS */}
-      <Reviews reviews={data.reviews} />
+      {/* CLIENTS REVIEWS */}
+      <Box
+        sx={{
+          display: "flex",
+          py: "2.5rem",
+          flexDirection: "column",
+          gap: "0.75rem",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography
+          variant="head"
+          sx={{
+            color: palette.primary.dark,
+            fontWeight: "bold",
+            fontSize: { md: "2.0rem", xs: "1.25rem" },
+          }}
+        >
+          What our Clients Say
+        </Typography>
+        <Typography
+          variant="text"
+          sx={{
+            color: palette.text.secondary,
+            fontSize: { md: "1.25rem" },
+            textAlign: { md: "left", xs: "center" },
+          }}
+        >
+          Duis aute irure dolor in reprehenderit in voluptate cillum dolore eu
+          fugiat nulla pariatur.
+        </Typography>
+      </Box>
+      {isMobile ? (
+        <MobileReviews reviews={data.reviews} />
+      ) : (
+        <Reviews reviews={data.reviews} />
+      )}
     </div>
   );
 };

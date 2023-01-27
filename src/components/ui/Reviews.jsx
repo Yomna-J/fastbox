@@ -1,14 +1,7 @@
-import {
-  Button,
-  Box,
-  Typography,
-  useTheme,
-  Grid,
-  Rating,
-  Avatar,
-} from "@mui/material";
+import { Box, Typography, useTheme, Rating, Avatar } from "@mui/material";
 import { useState } from "react";
 import { theme } from "../../theme";
+import { default as quote } from "../../assets/quote.svg";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Reviews = ({ reviews }) => {
@@ -53,7 +46,7 @@ const Reviews = ({ reviews }) => {
                 p: "2rem",
                 borderRadius: ".65rem",
                 display: "flex",
-                justifyContent: "space-between",
+                justifyContent: "space-around",
                 alignItems: "center",
                 background:
                   " linear-gradient(90deg, rgba(227,249,231,1) 0%, rgba(248,253,249,0.17776617482930668) 91%, rgba(255,255,255,1) 100%)",
@@ -61,8 +54,12 @@ const Reviews = ({ reviews }) => {
               }}
             >
               <Avatar
-                alt={reviews[activeTab].author}
-                src={reviews[activeTab].avatar}
+                alt={review.author}
+                src={review.avatar}
+                sx={{
+                  width: "4rem",
+                  height: "4rem",
+                }}
               />
 
               <Typography
@@ -95,8 +92,7 @@ const Reviews = ({ reviews }) => {
           backgroundColor: palette.secondary.main,
         }}
       >
-        {/* TODO: Add svg */}
-
+        <Box component="img" src={quote} alt="quote" />
         <Typography
           variant="text"
           sx={{
@@ -114,7 +110,12 @@ const Reviews = ({ reviews }) => {
         >
           {reviews[activeTab].job}
         </Typography>
-        <Rating name="read-only" value={reviews[activeTab].rate} readOnly />
+        <Rating
+          name="read-only"
+          precision={0.5}
+          value={reviews[activeTab].rate}
+          readOnly
+        />
       </Box>
     </Box>
   );
