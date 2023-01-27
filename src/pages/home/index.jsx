@@ -82,15 +82,16 @@ const Home = () => {
     reviews: [
       {
         id: 0,
-        picture: "",
+        avatar: "",
         author: "dsafas",
         job: "dasf",
-        content: "dsafajhdalkjhdasjfkhafeiaf fhdfalkfjh afajhflkjafsf",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur finibus risus consectetur pharetra. Sed scelerisque, nisi ut vestibulum convallis, nibh arcu iaculis tellus, vel molestie risus nisl ut purus. Sed at erat nec sem pretium porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse eu neque ex. Integer rhoncus enim a magna scelerisque, sed euismod lacus imperdiet. Phasellus ac diam eget sem tincidunt fermentum. Duis at nunc quis leo mollis tincidunt at ut turpis.",
         rate: 5,
       },
       {
         id: 1,
-        picture: "",
+        avatar: "",
         author: "eqrvzvv",
         job: "eeawra",
         content: "oooadsafjk dajhfkaf jakkdspsad",
@@ -105,6 +106,7 @@ const Home = () => {
       {/* tools */}
       <Box
         width="100%"
+        max-width="10w"
         sx={{
           backgroundColor: palette.secondary.main,
           p: "2rem",
@@ -370,6 +372,71 @@ const Home = () => {
       {/* TODO: Missing Section */}
       {/* REVIEWS */}
       <Reviews reviews={data.reviews} />
+      {/* 
+      <Box
+        sx={{
+          display: "flex",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", md: "flex-start" },
+            gap: "1.5rem",
+            p: { xs: "2rem" },
+            pl: { md: "4rem" },
+          }}
+        >
+          <Typography
+            variant="head"
+            sx={{
+              color: palette.primary.dark,
+              fontWeight: "bold",
+              fontSize: { md: "2.0rem", xs: "1.25rem" },
+            }}
+          >
+            Follow your shipment via GPS{" "}
+          </Typography>
+          <Typography
+            variant="text"
+            sx={{
+              pt: "1rem",
+              color: palette.text.secondary,
+              fontSize: { md: "1.25rem" },
+              textAlign: { md: "left", xs: "center" },
+            }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate..
+          </Typography>
+          <Button
+            variant="text"
+            sx={{
+              width: "10rem",
+              p: ".5rem 1.5rem",
+              backgroundColor: palette.primary.main,
+              color: "#ffffff",
+              borderRadius: 2,
+              boxShadow: ` 0px 7px 5px 0px ${palette.primary.light}}`,
+              "&:hover": { color: palette.primary.main },
+            }}
+          >
+            Learn More
+          </Button>
+        </Box>
+        <Box
+          component="img"
+          sx={{
+            width: { xs: "100%", md: "50%" },
+          }}
+          src={truck}
+          alt="truck"
+        />
+      </Box> */}
     </div>
   );
 };

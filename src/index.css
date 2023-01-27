@@ -61,4 +61,5 @@
     rgba(246, 253, 247, 0.2281863428965336) 23%,
     rgba(227, 249, 231, 1) 100%
   ) !important;
+  border-radius: 0 !important;
 }

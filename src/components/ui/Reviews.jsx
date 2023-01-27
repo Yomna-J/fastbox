@@ -1,6 +1,15 @@
-import { Button, Box, Typography, useTheme, Grid } from "@mui/material";
+import {
+  Button,
+  Box,
+  Typography,
+  useTheme,
+  Grid,
+  Rating,
+  Avatar,
+} from "@mui/material";
 import { useState } from "react";
 import { theme } from "../../theme";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Reviews = ({ reviews }) => {
   const { palette } = useTheme(theme);
@@ -18,14 +27,13 @@ const Reviews = ({ reviews }) => {
         borderRadius: "1.25rem",
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        gap: "5rem",
       }}
     >
       {/* TABS BOX */}
       <Box
         sx={{
           display: "flex",
-          p: "3rem",
+          p: "0 0 3rem 3rem",
           gap: "1.5rem",
           flexDirection: "column",
           height: "100%",
@@ -44,12 +52,30 @@ const Reviews = ({ reviews }) => {
                 width: "100%",
                 p: "2rem",
                 borderRadius: ".65rem",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
                 background:
                   " linear-gradient(90deg, rgba(227,249,231,1) 0%, rgba(248,253,249,0.17776617482930668) 91%, rgba(255,255,255,1) 100%)",
                 cursor: "pointer",
               }}
             >
-              {review.author}
+              <Avatar
+                alt={reviews[activeTab].author}
+                src={reviews[activeTab].avatar}
+              />
+
+              <Typography
+                variant="head"
+                sx={{
+                  color: palette.text.primary,
+                  fontWeight: "bold",
+                }}
+              >
+                {review.author}
+              </Typography>
+
+              <ArrowForwardIosIcon color={palette.primary.main} />
             </Box>
           );
         })}
@@ -58,12 +84,37 @@ const Reviews = ({ reviews }) => {
       <Box
         sx={{
           width: "70%",
-          borderRadius: ".65rem",
-
+          borderRadius: activeTab === 0 ? "0 .65rem  .65rem .65rem" : ".65rem",
+          display: "flex",
+          p: "3rem 6rem",
+          gap: "2rem",
+          flexDirection: "column",
+          textAlign: "center",
+          alignItems: "center",
+          justifyContent: "center",
           backgroundColor: palette.secondary.main,
         }}
       >
-        {reviews[activeTab].content}
+        {/* TODO: Add svg */}
+
+        <Typography
+          variant="text"
+          sx={{
+            color: palette.text.secondary,
+          }}
+        >
+          {reviews[activeTab].content}
+        </Typography>
+        <Typography
+          variant="head"
+          sx={{
+            color: palette.primary.dark,
+            fontWeight: "bold",
+          }}
+        >
+          {reviews[activeTab].job}
+        </Typography>
+        <Rating name="read-only" value={reviews[activeTab].rate} readOnly />
       </Box>
     </Box>
   );
