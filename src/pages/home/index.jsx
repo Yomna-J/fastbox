@@ -310,7 +310,7 @@ const Home = () => {
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
-          my: "5%",
+          my: "2.5%",
         }}
       >
         <Box
@@ -323,13 +323,6 @@ const Home = () => {
             p: "0 2rem 2rem 10%",
           }}
         >
-          <Box
-            component="img"
-            sx={{ pb: { md: "2rem" }, ml: { md: "-2.5rem" } }}
-            src={star}
-            alt="star"
-          />
-
           <Typography
             variant="head"
             sx={{

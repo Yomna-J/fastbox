@@ -6,11 +6,11 @@ import {
   TextField,
   Button,
 } from "@mui/material";
-
+import { theme } from "../../theme";
 
 // TODO: Update background image
 const Hero = () => {
-  const { palette } = useTheme();
+  const { palette } = useTheme(theme);
   return (
     <div
       className="hero"

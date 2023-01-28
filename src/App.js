@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { theme } from "./theme";
 import Navbar from "./components/navbar";
 import Home from "./pages/home";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
           </Routes>
+          <Footer />
         </ThemeProvider>
       </div>
     </BrowserRouter>

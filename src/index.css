@@ -67,3 +67,21 @@
   ) !important;
   border-radius: 0 !important;
 }
+/* FOOTER */
+.footer-item {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  gap: 1rem;
+  flex-direction: column;
+}
+.contact-item {
+  display: flex;
+  gap: 1rem;
+}
+.footer-item > a.link {
+  padding: 0;
+}
+.footer-title {
+  padding-bottom: 2rem;
+}

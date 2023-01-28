@@ -1,9 +1,7 @@
 import {
   Box,
   Typography,
-  CardContent,
   useTheme,
-  CardHeader,
 } from "@mui/material";
 import { theme } from "../../theme";
 

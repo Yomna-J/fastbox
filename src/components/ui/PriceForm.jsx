@@ -18,7 +18,6 @@ import { useState } from "react";
 
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PrimaryButton from "./PrimaryButton";
-// TODO: Responsive design
 const PriceForm = () => {
   const { palette } = useTheme(theme);
   const [bookingDate, setBookingDate] = useState(new Date());
@@ -28,22 +27,20 @@ const PriceForm = () => {
     from: "",
     to: "",
   });
-
-  //TODO: Check bookingDate
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSearchValues({ ...searchValues, [name]: value });
   };
 
-  const onSubmitForm = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
   };
 
   const { parcelType, from, to } = searchValues;
 
   return (
-    <>
+    <form onSubmit={handleFormSubmit}>
       {/* TODO: Add labels */}
       {/* BOOKING DATE */}
       <Box display="flex" gap="1rem" alignItems="center">
@@ -225,7 +222,7 @@ const PriceForm = () => {
         </FormControl>
       </Box>
       <PrimaryButton title="Calculate" />
-    </>
+    </form>
   );
 };
 
