@@ -14,7 +14,7 @@
 
 ![UI Image](/resources/demo.png)
 
-FastBox is Courier And Product Delivery Services firm. The UI is desgined by [Uitaskteam](https://www.figma.com/@uitaskca) on [Figma](https://www.figma.com/community/file/1192719418391264734). 
+FastBox is Courier And Product Delivery Services firm. The UI is designed by [Uitaskteam](https://www.figma.com/@uitaskca) on [Figma](https://www.figma.com/community/file/1192719418391264734). 
 
 
 ## Tools Used
