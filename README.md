@@ -7,7 +7,7 @@
   <h2 align="center">FastBox Landing Page</h2>
   <p align="center">
     <a href="https://www.figma.com/community/file/1192719418391264734"><strong>Figma Design</strong></a> . 
-    <a href=""><strong>View Demo</strong></a>
+    <a href="https://fastbox-opal.vercel.app"><strong>View Demo</strong></a>
   </p>
 </div>
 
