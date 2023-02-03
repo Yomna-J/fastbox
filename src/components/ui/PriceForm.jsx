@@ -27,7 +27,7 @@ const PriceForm = () => {
     from: "",
     to: "",
   });
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSearchValues({ ...searchValues, [name]: value });
@@ -78,6 +78,7 @@ const PriceForm = () => {
             <TextField
               // InputLabelProps={{ shrink: false }}
               variant="standard"
+              fullWidth
               displayEmpty
               {...params}
               sx={{
@@ -126,7 +127,7 @@ const PriceForm = () => {
           Type of Parcel
         </Typography>
       </Box>
-      <FormControl className="data-field">
+      <FormControl className="data-field" fullWidth>
         <Select
           variant="standard"
           value={parcelType}
