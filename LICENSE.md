@@ -1,52 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@Yomna-J 
-30-seconds
-/
-30-seconds-of-code
-Public
-Fork your own copy of 30-seconds/30-seconds-of-code
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-30-seconds-of-code/LICENSE
-30-seconds/30-seconds-of-code is licensed under the
-
-Creative Commons Attribution 4.0 International
-Permits almost any use subject to providing credit and license notice. Frequently used for media assets and educational materials. The most common license for Open Access scientific publications. Not recommended for software.
-
-Permissions
- Commercial use
- Modification
- Distribution
- Private use
-Limitations
- Liability
- Trademark use
- Patent use
- Warranty
-Conditions
- License and copyright notice
- State changes
-This is not legal advice. Learn more about repository licenses.
-@Chalarangelo
-Chalarangelo Relicense to CC-BY
-…
-Latest commit ccf45ec on Nov 15, 2021
- History
- 1 contributor
-395 lines (305 sloc)  18.2 KB
-
 Attribution 4.0 International
 
 =======================================================================
@@ -442,18 +393,3 @@ the avoidance of doubt, this paragraph does not form part of the
 public licenses.
 
 Creative Commons may be contacted at creativecommons.org.
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-30-seconds-of-code/LICENSE at master · 30-seconds/30-seconds-of-code
