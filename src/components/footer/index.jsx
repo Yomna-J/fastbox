@@ -183,7 +183,8 @@ const Footer = () => {
             color: palette.text.secondary,
           }}
         >
-          Copyright 2023 | Uitaskca - All rights Reserved
+          Copyright 2023 | Designed by Uitaskca built by Yomna-J - All rights
+          Reserved
         </Typography>
         <Box component="img" src={social} alt="social" />
       </Box>
