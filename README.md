@@ -17,7 +17,7 @@ FastBox is Courier And Product Delivery Services firm. The UI is desgined by [Ui
 
 
 ## Tools Used
-<img src="https://img.shields.io/static/v1?label=&message=React Js&color=61DAFB&logo=React&logoColor=000000"/> <img src="https://img.shields.io/static/v1?label=&message=MUI&color=007FFF&logo=MUI&logoColor=FFFFFF"/>
+<img src="https://img.shields.io/static/v1?label=&message=React Js&color=61DAFB&logo=React&logoColor=000000"/> <img src="https://img.shields.io/static/v1?label=&message=MUI&color=007FFF&logo=MUI&logoColor=FFFFFF"/> <img src="https://img.shields.io/static/v1?label=&message=Vercel&color=000000&logo=vercel&logoColor=FFFFFF"/>
 
 ## Project Run
 1. Install dependencies
