@@ -31,3 +31,5 @@ FastBox is Courier And Product Delivery Services firm. The UI is designed by [Ui
    ```sh
    npm start
    ```
+## LICENSE
+This repository [UI design elements](https://www.figma.com/community/file/1192719418391264734) are licensed under CC-BY-4.0 and the code is licensed under the MIT License. Please be sure to comply with the terms of both licenses.   
